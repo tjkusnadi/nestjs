@@ -1,0 +1,11 @@
+version: '2'
+services:
+  mongodb:
+    image: docker.io/mongo:4.0
+    hostname: mongodb
+    container_name: nestjs-mongodb
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongoInit.js:/docker-entrypoint-initdb.d/mongoInit.js:ro
